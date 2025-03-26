@@ -20,12 +20,18 @@ SITE_NAME = getenv("SITE_NAME")
 SECRET_KEY =  getenv("DJNAGO_SECRET_KEY","4XeyITfLVx0JYDdGQTcsu3rRWBgdsNn4aUFhqS96s8H_qAuimXs")
 # 'django-insecure-$(ub-&=99n=3fw=+@bccj$cjjy*1o)5vck(e(0g)daz2*o6@0u'
 # SECURITY WARNING: don't run with debug turned on in production!
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
+
 DEBUG = True
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1","0.0.0.0"]
 
 ADMIN_URL = getenv("DJANGO_ADMIN_URL")
 
+EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+EMAIL_HOST = getenv("EMAIL_HOST")
+EMAIL_PORT = getenv("EMAIL_PORT")
+DEFAULT_FROM_EMAIL = getenv("DEFAULT_FROM_EMAIL")
 
 DOMAIN = getenv("DOMAIN")
 

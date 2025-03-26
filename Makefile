@@ -10,7 +10,6 @@ down:
 down-v:
 	docker compose -f local.yml down -v
 
-
 show-logs:
 	docker compose -f local.yml logs
 
